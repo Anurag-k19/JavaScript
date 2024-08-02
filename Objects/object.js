@@ -39,7 +39,7 @@ User.email="AnuragKumar@chatGpt.com"
 
 
 
-// We can also add function in Objects. Functions are trwated as Variables
+// We can also add function in Objects. Functions are treated as Variables
 
 User.greetings = function(){
     console.log(`Hello new JS user ${this["full name"]} age ${this.age} `);  //we use "this" to access the proprerty attached to Object

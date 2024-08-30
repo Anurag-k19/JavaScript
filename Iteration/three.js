@@ -10,6 +10,7 @@ for (const num of arr) {
     
 }
 
+
 const greeting = "Hello World"
 
 for (const greet of greeting) {
@@ -53,8 +54,8 @@ const Myobject  = {
     game2:"Valorant"
 }
 
-for (const game of Myobject) {
-    // console.log(game);      // Output :-  Myobject is not iterable
+// for (const game of Myobject) {
+//     // console.log(game);      // Output :-  Myobject is not iterable
     
     
-}
+// }

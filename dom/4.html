@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: azure;">
+    
+    <div class="language">
+        <li>JavaScript</li>
+    </div>
+</body>
+<script>
+    function addLanguage(langName){
+     const li = document.createElement("li")  
+      li.innerHTML = `${langName}`
+      document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("Python")
+
+    function OptimisedAddLanguage(OptilangName){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(OptilangName))
+
+        document.querySelector('.language').appendChild(li)
+    }
+    OptimisedAddLanguage("C++")
+
+
+    //Edit
+
+    const firstLang = document.querySelector("li:nth-child(1)")
+
+    // firstLang.innerHTML = "Rust"
+    // We can change it using innerHTML, but we have better and optimised way
+    const newli = document.createElement("li")
+    newli.textContent = "Rust"
+    firstLang.replaceWith(newli)
+
+
+    // Edit the outer html
+    const SecondLang = document.querySelector("li:first-child")
+    SecondLang.outerHTML = "<li>Java</li>"
+
+    //Remove Element
+
+    const lastElement = document.querySelector("li:last-child")
+    lastElement.remove()
+
+</script>
+</html>

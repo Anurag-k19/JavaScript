@@ -1,0 +1,50 @@
+<!--  Digitak clock -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            background-color: #212121;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+           
+    
+        }
+        .clock{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 200px;
+            border-radius: 20px;
+            background-color: orange;
+            font-size: 24px;
+            color: azure;
+           
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="centre">
+        <p class="clock"></p>
+    </div>
+</body>
+<script>
+    const clocks = document.querySelector('.clock');
+    setInterval(function(){
+        let date = new Date();
+        clocks.innerHTML = date.toLocaleTimeString();
+        
+    },1000);
+</script>
+</html>

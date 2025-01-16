@@ -1,0 +1,78 @@
+<!-- Guess the number game -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number game</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        height:100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #212121;
+        color: white;
+        
+    }
+    .parent{
+        height: 500px;
+        width: 400px;
+        background-color: #000000;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        row-gap: 2px;
+        border-radius: 10px;
+    }
+    .submitButton{
+        margin-top: 15px;
+        margin-left: 100px;
+        border-radius: 5px;
+        background-color: rgb(75, 78, 255);
+    }
+    .heading{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-top: 0px;
+        width: 100%;
+        background-color: rgb(75, 78, 255);
+        display: flex;
+        justify-content: center;
+    }
+    .guesses{
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background-color: #3c3b3b;
+    }
+</style>
+<body>
+    <div class="parent">
+    <p class="heading">Guess The Number</p>
+    <p>Try and guess a number between 1 and 100</p>
+    <p>You have 10 attempts</p>
+
+    <h1>Guess the Number</h1>
+    <br>
+    <form>
+        <label for="inputNumber">Enter the Number: </label>
+        <input type="text" name="inputNumber" id="inputNumber"><br>
+
+        <input class="submitButton" type="button" value="Submit Guess">
+    </form>
+   
+    <div id="result">
+        <p>Previous Guesses: <span class="guesses"></span></p> 
+        <p>Remaining Guesses: <span class="lastresult">10</span></p>
+        <p class="lowOrHigh"></p>
+    </div>
+</div>
+</body>
+<script src="guessNumber.js"></script>
+</html>

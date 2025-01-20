@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h1>Async in Javascript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Handler in Js
+    // handler is a function which doesn't have name it can also be a function which is written somewhere else and we are giving reference to it.
+
+    // setTimeout(function(){
+    //     console.log("Anurag");
+        
+    // },2000)
+
+
+    // const namePrint = function(){
+    //     console.log("Anurag");
+        
+    // }
+
+
+    const changeHeading = function(){
+        document.querySelector('h1').innerHTML = "Learning JavaScript"
+    }
+    const headingchange = setTimeout(changeHeading,5000)
+
+    const stopButton = document.getElementById('stop').addEventListener('click',function(){
+        clearTimeout(headingchange)
+        console.log("STOPPED");
+        
+    })
+    // adding a addEventListener to a button to stop the setTimmeout using clearTimeout
+</script>
+</html>

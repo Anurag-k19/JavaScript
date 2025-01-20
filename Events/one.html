@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""  ></li>
+
+            <!-- <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl')" ></li>   this apprach is not as good as it is not scable when we inject a event listener inside the html -->
+
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // JS is a sequentially run language 
+
+    // second approach to add event listener is by selecting an element
+
+    // document.getElementById("owl").onclick = function(){
+    //     alert("This is an owl")
+    // }
+
+    // this method is could also become little problamatic as we do not get much information insted we should use event Listeners because it not gives only onclick functionality but also the propagation.
+
+    // third Approach
+
+    // attachEvent() - Not used recently it was used for Internet Explorer
+    // Jquery - on {in Jquery we had on}
+
+
+    // Important addEventListener Objects to Study for interview
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY, offsetX, offsetY
+    // altkey, ctrlkey, shiftkey, keyCode    
+
+    // #####################################################################################################################################
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // We can use either true or false after the function in addEventListener function
+
+    // true is used for event capturing
+    // false is used for event bubling 
+
+    // ################################################################################################################################################
+
+    // Event Capturing - it works from top to bottom it first runs the parent element js and then the child node js
+
+    // Event bubling - this is the default method or parameter, it works from bottom to top, it first run the child element and then the parent element
+
+    // #################################################################################################################################################
+    
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+    
+    // ########################################################################################################################################################
+
+    // preventDefault() - The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+
+    // stopPropagation() - it used to used to prevent the further propagation of the current element in capturing or bubling phase
+   
+    
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);      // e.target.tagName is used get the tagname
+        if (e.target.tagName === 'IMG') {    // target's tagName is given in Capital letter
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode   // e.target.parwntNode is used to select the parent element
+            removeIt.remove()                    // .remove() is used to remove the element 
+        }
+    
+        
+    })
+
+    
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>

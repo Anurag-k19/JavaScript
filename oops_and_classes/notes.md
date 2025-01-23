@@ -11,12 +11,10 @@
 ## Parts of OOP
 Object Literal 
 
-Object literal
-
--Constructor function
--Prototypes
--Classes
--Instances (new, this)
+- Constructor function
+- Prototypes
+- Classes
+- Instances (new, this)
 
 ## $ Pillars of OOP
 

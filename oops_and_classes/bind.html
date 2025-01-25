@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bnid</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+
+    class React{
+        constructor(){
+            this.username = "xys"
+            this.server = "https://localhost:3000/"
+
+            // requrirements
+            document.querySelector('button').addEventListener('click', this.handleClick.bind(this)) 
+          }
+          // By default, the this context of a function changes depending on how it is called. For event listeners: 
+          // When this.handleClick is called by the browser in response to a button click, this will refer to the button element (<button>) instead of your class instance.
+          // .bind(this) explicitly binds the correct this (your class instance) to the function.
+       
+
+        handleClick(){
+            console.log("Clicked");
+            console.log(this.server);
+            
+        }
+
+    }
+
+    const react = new React()
+</script>
+</html>

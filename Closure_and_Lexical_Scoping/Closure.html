@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();    // here function displayName is returned to the variable myFunc
+    myFunc();                    // and when we call myFunc() the displayName function is called and is retains the variable of the
+                                 //  outer function because of lexical Scoping
+   
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+
+        // Practical example of Closure.
+
+        // clickHandler("orange") is called: Executes the function and returns a new function with the color value ("orange") captured in its closure.
+
+        // Returned function is assigned to onclick: The returned function is set as the onclick handler for the button with ID orange.
+
+        // Button is clicked: The onclick handler is executed, running the returned function.
+
+        // Returned function runs: The function changes document.body.style.backgroundColor to the captured color value ("orange").
+
+</script>
+</html>

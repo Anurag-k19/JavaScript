@@ -1,10 +1,12 @@
+
 body{
     height: 100vh;
     width: 100vw;
     box-sizing: border-box;
     margin: 0px;
+    color: aliceblue;
     padding: 0px;
-    background-color: #212121;
+    background-color: #000000f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,9 +17,67 @@ body{
     width: 600px;
     display: flex;
     flex-direction: column;
-   
-   
-    background-color: #414141;
-    margin: 0px;
-    padding: 0px;
+    gap: 10px; 
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #5A189A;
+ 
+}
+
+.container:hover {
+    box-shadow: 0 10px 30px rgba(126, 0, 245, 0.5); 
+    transform: scale(1.01); 
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 95%;
+    padding: 10px;
+    margin: 20px 0px;
+    border: 2px solid #7E00F5; 
+    border-radius: 8px;
+    background-color: #2D0057; 
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #B68BFA; 
+    box-shadow: 0 0 10px rgba(182, 139, 250, 0.7);
+}
+
+input[type="submit"] {
+    width: 99%;
+    padding: 10px;
+    background-color: #B68BFA;
+    border: none;
+    margin-top: 30px;
+    border-radius: 8px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="button"]:hover {
+    background-color: #E0B3FF; 
+}
+
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #5A189A;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 10px;
 }

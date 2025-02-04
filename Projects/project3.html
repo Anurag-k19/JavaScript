@@ -14,6 +14,7 @@
             height: 100vh;
             box-sizing: border-box;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 0px;
@@ -33,13 +34,22 @@
             color: azure;
            
         }
+
+        /* #para{
+            height: 50px;
+            width: 80px;
+            background-color: orange;
+            color: aliceblue;
+        } */
         
     </style>
 </head>
 <body>
     <div class="centre">
         <p class="clock"></p>
-    </div>
+    </div> 
+
+    <!-- <p id="para">00</p> -->
 </body>
 <script>
     const clocks = document.querySelector('.clock');
@@ -48,5 +58,12 @@
         clocks.innerHTML = date.toLocaleTimeString();
         
     },1000);
+
+    // const sec = document.querySelector("#para")
+
+    // setInterval(function(){
+    //     let newDate = new Date();
+    //     sec.innerHTML = (newDate.getSeconds()<10?"0":"") + newDate.getSeconds()
+    // },1000)
 </script>
 </html>

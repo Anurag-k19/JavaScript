@@ -1,4 +1,4 @@
-const access_key = "fEJAd8NlnKWdvyOjBUc4gQg6OjwyRoM0xVIYZXQZei4";
+const access_key = "";
 const input_button = document.getElementById('input_button')
 const search_result = document.getElementById('search-results')
 const showMore = document.getElementById('show-more-button')

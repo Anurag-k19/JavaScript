@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tick Tack Toe</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: white;
+      
+    }
+    .container{
+        display: grid;
+        place-content: center;
+        margin-top: 15%;
+
+    }
+     .rows{
+        display: flex;
+     }
+
+     .box{
+        height: 60px;
+        width: 60px;
+        border: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+     }
+
+     .title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+     }
+
+    #button{
+        display: flex;
+        justify-content: center;
+    }
+
+     button{
+        padding: 14px;
+        color: white;
+        background-color: skyblue;
+        font-weight: bold;
+        margin-top: 20px;
+        width: 120px;
+    
+
+     }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="rows">
+            <div onclick="handleClick(this)" id="0" class="box"></div>
+            <div onclick="handleClick(this)" id="1" class="box"></div>
+            <div onclick="handleClick(this)" id="2" class="box"></div>
+        </div>
+        <div class="rows">
+            <div onclick="handleClick(this)" id="3" class="box"></div>
+            <div onclick="handleClick(this)" id="4" class="box"></div>
+            <div onclick="handleClick(this)" id="5" class="box"></div>
+        </div>
+        <div class="rows">
+            <div onclick="handleClick(this)" id="6" class="box"></div>
+            <div onclick="handleClick(this)" id="7" class="box"></div>
+            <div onclick="handleClick(this)" id="8" class="box"></div>
+        </div>
+
+       
+    </div>
+   <div id="button">
+    <button id="restart"> Restart </button>
+   </div>
+
+   
+</body>
+<script src="TickTackToe.js"></script>
+</html
